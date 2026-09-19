@@ -1,0 +1,1902 @@
+⏳ 正在向 Slurm 叢集請求運算資源，請稍候...
+INFO:    Setting --net (required by --network)
+📦 正在建立隔離測試環境...
+[0;36mCompiling...[0m
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Found BISON: /usr/bin/bison (found suitable version "3.8.2", minimum required is "3.6") 
+-- Found FLEX: /usr/bin/flex (found version "2.6.4") 
+-- Configuring done (0.5s)
+-- Generating done (0.0s)
+-- Build files have been written to: /tmp/workspace/build
+[  4%] Building C object CMakeFiles/wenyan_runtime.dir/src/wy_rt/wy_rt.c.o
+[  8%] Building C object CMakeFiles/wenyan_runtime.dir/lib/utf8.c/utf8.c.o
+[ 12%] Linking C static library lib/libwenyan-runtime.a
+[ 12%] Built target wenyan_runtime
+[ 16%] [BISON][CompilerParser] Building parser with bison 3.8.2
+/tmp/workspace/src/compiler.y: warning: 53 shift/reduce conflicts [-Wconflicts-sr]
+/tmp/workspace/src/compiler.y: warning: 123 reduce/reduce conflicts [-Wconflicts-rr]
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token CALL [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . CALL VariableStmt
+  Shift derivation
+    BodyListStmt
+    `-> 3: FunctionCallBegin           BodyStmt
+           `-> 78: . CALL VariableStmt `-> 6: %empty
+  Second example: VariableStmt
+  Reduce derivation
+    BodyListStmt
+    `-> 3: VariableStmt BodyStmt
+                        `-> 6: %empty
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+  Shift derivation
+    BodyListStmt
+    `-> 3: ExpressionStmt                                                                      BodyStmt
+           `-> 84: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt `-> 6: %empty
+  Second example: ValueLiteralOrLastStmt PRINT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: ValueLiteralOrLastStmt BodyStmt
+                                  `-> 6: OperationStmt
+                                         `-> 41: ValueStmt      PRINT
+                                                 `-> 94: %empty
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+  Shift derivation
+    BodyListStmt
+    `-> 3: ExpressionStmt                                                                                      BodyStmt
+           `-> 85: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP `-> 6: %empty
+  Second example: EXP_MATH_MOD_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP PRINT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: EXP_MATH_MOD_OP BodyStmt
+                           `-> 6: OperationStmt
+                                  `-> 41: ValueStmt                                                                                     PRINT
+                                          `-> 94: ExpressionStmt
+                                                  `-> 85: ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+  Shift derivation
+    BodyListStmt
+    `-> 3: ExpressionStmt                                          BodyStmt
+           `-> 87: . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP `-> 6: %empty
+  Second example: EXP_BINARY_LOGIC_OP PRINT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: EXP_BINARY_LOGIC_OP BodyStmt
+                               `-> 6: OperationStmt
+                                      `-> 41: ValueStmt      PRINT
+                                              `-> 94: %empty
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . THOSE ValueStmt
+  Shift derivation
+    BodyListStmt
+    `-> 3: ValueStmt                 BodyStmt
+           `-> 97: . THOSE ValueStmt `-> 6: %empty
+  Second example: ValueStmt
+  Reduce derivation
+    BodyListStmt
+    `-> 3: ValueStmt BodyStmt
+                     `-> 6: %empty
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . THOSE ValueStmt LENGTH
+  Shift derivation
+    BodyListStmt
+    `-> 3: ValueStmt                        BodyStmt
+           `-> 98: . THOSE ValueStmt LENGTH `-> 6: %empty
+  Second example: LENGTH PRINT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: LENGTH BodyStmt
+                  `-> 6: OperationStmt
+                         `-> 41: PRINT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . THOSE ValueStmt INDEX ValueStmt
+  Shift derivation
+    BodyListStmt
+    `-> 3: ValueStmt                                  BodyStmt
+           `-> 100: . THOSE ValueStmt INDEX ValueStmt `-> 6: %empty
+  Second example: ValueStmt ValueStmt INDEX ValueStmt PRINT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: ValueStmt BodyStmt
+                     `-> 6: OperationStmt
+                            `-> 41: ValueStmt                          PRINT
+                                    `-> 100: ValueStmt INDEX ValueStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token NUMBER_LIT [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . NUMBER_LIT
+  Shift derivation
+    BodyListStmt
+    `-> 3: ValueLiteralStmt      BodyStmt
+           `-> 103: . NUMBER_LIT `-> 6: %empty
+  Second example: NUMBER_LIT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: NUMBER_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token BOOL_LIT [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . BOOL_LIT
+  Shift derivation
+    BodyListStmt
+    `-> 3: ValueLiteralStmt    BodyStmt
+           `-> 104: . BOOL_LIT `-> 6: %empty
+  Second example: BOOL_LIT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: BOOL_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token STR_LIT [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . STR_LIT
+  Shift derivation
+    BodyListStmt
+    `-> 3: ValueLiteralStmt   BodyStmt
+           `-> 105: . STR_LIT `-> 6: %empty
+  Second example: STR_LIT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: STR_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token IDENT [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . IDENT
+  Shift derivation
+    BodyListStmt
+    `-> 3: VariableStmt     BodyStmt
+           `-> 106: . IDENT `-> 6: %empty
+  Second example: IDENT
+  Reduce derivation
+    BodyListStmt
+    `-> 3: IDENT
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on token IF [-Wcounterexamples]
+  First example: BodyListStmt WHILE_TRUE . BodyListStmt IF ExpressionChainStmt TOPIC $@4 BodyListStmt ElseIfList ElseStmt END BodyStmt END $end
+  First reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                            $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 7: ConditionStmt
+                                                    `-> 22: WHILE_TRUE $@5              BodyListStmt                                                                                                      END
+                                                                       `-> 21: %empty . `-> 3: BodyListStmt BodyStmt                                                                             BodyStmt
+                                                                                                            `-> 7: ConditionStmt
+                                                                                                                   `-> 20: IF ExpressionChainStmt TOPIC $@4 BodyListStmt ElseIfList ElseStmt END
+  Second example: BodyListStmt WHILE_TRUE . IF ExpressionChainStmt TOPIC BREAK END $@7 BodyListStmt END $end
+  Second reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                  $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 7: ConditionStmt
+                                                    `-> 25: WHILE_TRUE $@6              IF ExpressionChainStmt TOPIC BREAK END $@7 BodyListStmt END
+                                                                       `-> 23: %empty .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token RETURN [-Wcounterexamples]
+  Example: BodyListStmt FunctionCallStmt . RETURN
+  Shift derivation
+    BodyListStmt
+    `-> 3: BodyListStmt BodyStmt
+                        `-> 6: OperationStmt
+                               `-> 49: FunctionCallStmt . RETURN
+  Reduce derivation
+    BodyListStmt
+    `-> 3: BodyListStmt                                          BodyStmt
+           `-> 3: BodyListStmt BodyStmt                          `-> 6: OperationStmt
+                               `-> 6: OperationStmt                     `-> 56: RETURN
+                                      `-> 50: FunctionCallStmt .
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on token RETURN [-Wcounterexamples]
+  Example: FunctionCallStmt .
+  First reduce derivation
+    BodyStmt
+    `-> 6: OperationStmt
+           `-> 50: FunctionCallStmt .
+  Second reduce derivation
+    ValueStmt
+    `-> 95: FunctionCallStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token NAME_IT [-Wcounterexamples]
+  Example: FunctionCallStmt . NAME_IT IDENT
+  Shift derivation
+    OperationStmt
+    `-> 47: FunctionCallStmt . NAME_IT IDENT
+  Reduce derivation
+    OperationStmt
+    `-> 43: ValueStmt                  NAME_IT IDENT
+            `-> 95: FunctionCallStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token PRINT [-Wcounterexamples]
+  Example: FunctionCallStmt . PRINT
+  Shift derivation
+    OperationStmt
+    `-> 48: FunctionCallStmt . PRINT
+  Reduce derivation
+    OperationStmt
+    `-> 41: ValueStmt                  PRINT
+            `-> 95: FunctionCallStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token RETURN [-Wcounterexamples]
+  Example: FunctionCallStmt . RETURN
+  Shift derivation
+    OperationStmt
+    `-> 49: FunctionCallStmt . RETURN
+  Reduce derivation
+    OperationStmt
+    `-> 55: ValueStmt                  RETURN
+            `-> 95: FunctionCallStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_PREPOSITION [-Wcounterexamples]
+  Example: . EXP_PREPOSITION ValueStmt
+  Shift derivation
+    FunctionCallArgList
+    `-> 80: . EXP_PREPOSITION ValueStmt
+  Reduce derivation
+    FunctionCallArgList
+    `-> 79: FunctionCallArgList EXP_PREPOSITION ValueStmt
+            `-> 81: %empty .
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on tokens SAID, NAME_IT, PRINT, RETURN, CALL, THOSE, NUMBER_LIT, BOOL_LIT, STR_LIT, IDENT, EXP_MATH_OP [-Wcounterexamples]
+  Example: ExpressionStmt .
+  First reduce derivation
+    ExpressionChainStmt
+    `-> 82: ExpressionStmt .
+  Second reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token END [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: FOR . END $@8 BodyListStmt END
+  Shift derivation
+    ConditionStmt
+    `-> 27: FOR OptionalEnd   $@8 BodyListStmt END
+                `-> 28: . END
+  Second example: FOR . END
+  Reduce derivation
+    ConditionStmt
+    `-> 27: FOR OptionalEnd      $@8            BodyListStmt   END
+                `-> 29: %empty . `-> 27: %empty `-> 27: %empty
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...  Example: THOSE ValueStmt . EXP_LOGIC_OP ValueStmt
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 86: ValueStmt                 EXP_LOGIC_OP ValueStmt
+                    `-> 97: THOSE ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token LENGTH [-Wcounterexamples]
+  Example: THOSE ValueStmt . LENGTH
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 96: ValueStmt . LENGTH
+  Reduce derivation
+    ValueStmt
+    `-> 96: ValueStmt                 LENGTH
+            `-> 97: THOSE ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token LENGTH [-Wcounterexamples]
+  Example: THOSE ValueStmt . LENGTH
+  Shift derivation
+    ValueStmt
+    `-> 98: THOSE ValueStmt . LENGTH
+  Reduce derivation
+    ValueStmt
+    `-> 96: ValueStmt                 LENGTH
+            `-> 97: THOSE ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token INDEX [-Wcounterexamples]
+  Example: THOSE ValueStmt . INDEX ValueStmt
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 99: ValueStmt . INDEX ValueStmt
+  Reduce derivation
+    ValueStmt
+    `-> 99: ValueStmt                 INDEX ValueStmt
+            `-> 97: THOSE ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token INDEX [-Wcounterexamples]
+  Example: THOSE ValueStmt . INDEX ValueStmt
+  Shift derivation
+    ValueStmt
+    `-> 100: THOSE ValueStmt . INDEX ValueStmt
+  Reduce derivation
+    ValueStmt
+    `-> 99: ValueStmt                 INDEX ValueStmt
+            `-> 97: THOSE ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token CALL [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: THOSE ValueStmt . CALL VariableStmt FunctionCallArgList EXP_BINARY_LOGIC_OP ValueStmt EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ExpressionStmt
+    `-> 87: ValueStmt                                                                                                           ValueStmt EXP_BINARY_LOGIC_OP
+            `-> 94: ExpressionStmt
+                    `-> 87: THOSE ValueStmt ValueStmt                                                       EXP_BINARY_LOGIC_OP
+                                            `-> 95: FunctionCallStmt
+                                                    `-> 77: FunctionCallBegin           FunctionCallArgList
+                                                            `-> 78: . CALL VariableStmt
+  Second example: THOSE ValueStmt . CALL VariableStmt FunctionCallArgList EXP_BINARY_LOGIC_OP
+  Reduce derivation
+    ExpressionStmt
+    `-> 87: ValueStmt                 ValueStmt                                                     EXP_BINARY_LOGIC_OP
+            `-> 97: THOSE ValueStmt . `-> 95: FunctionCallStmt
+                                              `-> 77: FunctionCallBegin         FunctionCallArgList
+                                                      `-> 78: CALL VariableStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: THOSE ValueStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_BINARY_LOGIC_OP ValueStmt EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ExpressionStmt
+    `-> 87: ValueStmt                                                                                                                                       ValueStmt EXP_BINARY_LOGIC_OP
+            `-> 94: ExpressionStmt
+                    `-> 87: THOSE ValueStmt ValueStmt                                                                                   EXP_BINARY_LOGIC_OP
+                                            `-> 94: ExpressionStmt
+                                                    `-> 84: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+  Second example: THOSE ValueStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_BINARY_LOGIC_OP
+  Reduce derivation
+    ExpressionStmt
+    `-> 87: ValueStmt                 ValueStmt                                                                                 EXP_BINARY_LOGIC_OP
+            `-> 97: THOSE ValueStmt . `-> 94: ExpressionStmt
+                                              `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: THOSE ValueStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP EXP_BINARY_LOGIC_OP ValueStmt EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ExpressionStmt
+    `-> 87: ValueStmt                                                                                                                                                       ValueStmt EXP_BINARY_LOGIC_OP
+            `-> 94: ExpressionStmt
+                    `-> 87: THOSE ValueStmt ValueStmt                                                                                                   EXP_BINARY_LOGIC_OP
+                                            `-> 94: ExpressionStmt
+                                                    `-> 85: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+  Second example: THOSE ValueStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP EXP_BINARY_LOGIC_OP
+  Reduce derivation
+    ExpressionStmt
+    `-> 87: ValueStmt                 ValueStmt                                                                                                 EXP_BINARY_LOGIC_OP
+            `-> 97: THOSE ValueStmt . `-> 94: ExpressionStmt
+                                              `-> 85: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+time limit exceeded: 6.000000
+  First example: BodyListStmt FOR THOSE ValueStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP EXP_BINARY_LOGIC_OP OptionalEnd $@8 BodyListStmt END $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                            $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt ConditionStmt
+                                             `-> 27: FOR ValueStmt                                                                                                           OptionalEnd $@8 BodyListStmt END
+                                                         `-> 94: ExpressionStmt
+                                                                 `-> 87: THOSE ValueStmt ValueStmt                                                       EXP_BINARY_LOGIC_OP
+                                                                                         `-> 94: ExpressionStmt
+                                                                                                 `-> 87: . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+  Second example: BodyListStmt FOR THOSE ValueStmt . OptionalEnd $@8 BodyListStmt THOSE ValueStmt PRINT BodyStmt END $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                      $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 7: ConditionStmt
+                                                    `-> 27: FOR ValueStmt                 OptionalEnd $@8 BodyListStmt                                                              END
+                                                                `-> 97: THOSE ValueStmt .                 `-> 3: BodyListStmt BodyStmt                                     BodyStmt
+                                                                                                                              `-> 6: OperationStmt
+                                                                                                                                     `-> 41: ValueStmt               PRINT
+                                                                                                                                             `-> 97: THOSE ValueStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...  Example: THOSE THOSE ValueStmt . THOSE ValueStmt EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 87: THOSE ValueStmt ValueStmt                 EXP_BINARY_LOGIC_OP
+                                                  `-> 97: . THOSE ValueStmt
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 87: THOSE ValueStmt                 ValueStmt               EXP_BINARY_LOGIC_OP
+                          `-> 97: THOSE ValueStmt . `-> 97: THOSE ValueStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...  Example: THOSE THOSE ValueStmt . THOSE ValueStmt LENGTH EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 87: THOSE ValueStmt ValueStmt                        EXP_BINARY_LOGIC_OP
+                                                  `-> 98: . THOSE ValueStmt LENGTH
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 87: THOSE ValueStmt                 ValueStmt                      EXP_BINARY_LOGIC_OP
+                          `-> 97: THOSE ValueStmt . `-> 98: THOSE ValueStmt LENGTH
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...  Example: THOSE THOSE ValueStmt . THOSE ValueStmt INDEX ValueStmt EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 87: THOSE ValueStmt ValueStmt                                  EXP_BINARY_LOGIC_OP
+                                                  `-> 100: . THOSE ValueStmt INDEX ValueStmt
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 87: THOSE ValueStmt                 ValueStmt                                EXP_BINARY_LOGIC_OP
+                          `-> 97: THOSE ValueStmt . `-> 100: THOSE ValueStmt INDEX ValueStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token NUMBER_LIT [-Wcounterexamples]
+  Example: THOSE THOSE ValueStmt . NUMBER_LIT EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 87: THOSE ValueStmt ValueStmt                              EXP_BINARY_LOGIC_OP
+                                                  `-> 93: LitOrVarStmt
+                                                          `-> 101: ValueLiteralStmt
+                                                                   `-> 103: . NUMBER_LIT
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 87: THOSE ValueStmt                 ValueStmt                            EXP_BINARY_LOGIC_OP
+                          `-> 97: THOSE ValueStmt . `-> 93: LitOrVarStmt
+                                                            `-> 101: ValueLiteralStmt
+                                                                     `-> 103: NUMBER_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token BOOL_LIT [-Wcounterexamples]
+  Example: THOSE THOSE ValueStmt . BOOL_LIT EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 87: THOSE ValueStmt ValueStmt                            EXP_BINARY_LOGIC_OP
+                                                  `-> 93: LitOrVarStmt
+                                                          `-> 101: ValueLiteralStmt
+                                                                   `-> 104: . BOOL_LIT
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 87: THOSE ValueStmt                 ValueStmt                          EXP_BINARY_LOGIC_OP
+                          `-> 97: THOSE ValueStmt . `-> 93: LitOrVarStmt
+                                                            `-> 101: ValueLiteralStmt
+                                                                     `-> 104: BOOL_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token STR_LIT [-Wcounterexamples]
+  Example: THOSE THOSE ValueStmt . STR_LIT EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 87: THOSE ValueStmt ValueStmt                           EXP_BINARY_LOGIC_OP
+                                                  `-> 93: LitOrVarStmt
+                                                          `-> 101: ValueLiteralStmt
+                                                                   `-> 105: . STR_LIT
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 87: THOSE ValueStmt                 ValueStmt                         EXP_BINARY_LOGIC_OP
+                          `-> 97: THOSE ValueStmt . `-> 93: LitOrVarStmt
+                                                            `-> 101: ValueLiteralStmt
+                                                                     `-> 105: STR_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token IDENT [-Wcounterexamples]
+  Example: THOSE THOSE ValueStmt . IDENT EXP_BINARY_LOGIC_OP
+  Shift derivation
+    ValueStmt
+    `-> 97: THOSE ValueStmt
+                  `-> 94: ExpressionStmt
+                          `-> 87: THOSE ValueStmt ValueStmt                         EXP_BINARY_LOGIC_OP
+                                                  `-> 93: LitOrVarStmt
+                                                          `-> 102: VariableStmt
+                                                                   `-> 106: . IDENT
+  Reduce derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 87: THOSE ValueStmt                 ValueStmt                       EXP_BINARY_LOGIC_OP
+                          `-> 97: THOSE ValueStmt . `-> 93: LitOrVarStmt
+                                                            `-> 102: VariableStmt
+                                                                     `-> 106: IDENT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+  Example: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Shift derivation
+    ValueLiteralOrLastStmt
+    `-> 91: ValueStmt
+            `-> 94: ExpressionStmt
+                    `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Reduce derivation
+    ExpressionNextStmt
+    `-> 90: ValueLiteralOrLastStmt EXP_LOGIC_OP ValueStmt
+            `-> 91: ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token LENGTH [-Wcounterexamples]
+  Example: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueStmt . LENGTH
+  Shift derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+                                                                       `-> 91: ValueStmt
+                                                                               `-> 96: ValueStmt . LENGTH
+  Reduce derivation
+    ValueStmt
+    `-> 96: ValueStmt                                                                                 LENGTH
+            `-> 94: ExpressionStmt
+                    `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+                                                                               `-> 91: ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token INDEX [-Wcounterexamples]
+  Example: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueStmt . INDEX ValueStmt
+  Shift derivation
+    ValueStmt
+    `-> 94: ExpressionStmt
+            `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+                                                                       `-> 91: ValueStmt
+                                                                               `-> 99: ValueStmt . INDEX ValueStmt
+  Reduce derivation
+    ValueStmt
+    `-> 99: ValueStmt                                                                                 INDEX ValueStmt
+            `-> 94: ExpressionStmt
+                    `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+                                                                               `-> 91: ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token CALL [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . CALL VariableStmt ExpressionNextStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+  Shift derivation
+    ValueItems
+    `-> 64: FunctionCallBegin           ExpressionChainStmt        TAKE NUMBER_LIT TO_CALL VariableStmt
+            `-> 78: . CALL VariableStmt `-> 83: ExpressionNextStmt
+  Second example: VariableStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+  Reduce derivation
+    ValueItems
+    `-> 64: VariableStmt ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+                         `-> 82: %empty
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+Productions leading up to the conflict state found.  Still finding a possible unifying counterexample...time limit exceeded: 6.000000
+  First example: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt ExpressionNextStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+  Shift derivation
+    ValueItems
+    `-> 64: ExpressionStmt                                                                      ExpressionChainStmt        TAKE NUMBER_LIT TO_CALL VariableStmt
+            `-> 84: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt `-> 83: ExpressionNextStmt
+  Second example: EXP_PREPOSITION ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+  Reduce derivation
+    ValueItems
+    `-> 64: EXP_PREPOSITION ExpressionChainStmt                                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                            `-> 82: ExpressionStmt
+                                    `-> 84: ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                                         $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                                                                                            TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                                                                                              EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 94: ExpressionStmt
+                                                                                                                           `-> 85: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                      NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                             $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                                                TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                                                  EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 94: ExpressionStmt
+                                                                                                                           `-> 87: . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                          NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                             TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 88: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                      NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                                             TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 89: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                      NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                       $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                          TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt            EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 97: . THOSE ValueStmt
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                          NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt LENGTH EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                 TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                   EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 98: . THOSE ValueStmt LENGTH
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                          NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt INDEX ValueStmt EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                        $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                             EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 100: . THOSE ValueStmt INDEX ValueStmt
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                          NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token NUMBER_LIT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . NUMBER_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                    $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                         EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 93: LitOrVarStmt
+                                                                                                                           `-> 101: ValueLiteralStmt
+                                                                                                                                    `-> 103: . NUMBER_LIT
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . NUMBER_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                            $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                        NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                                         TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 86: ValueStmt                            EXP_LOGIC_OP ValueStmt
+                                                                                                                             `-> 93: LitOrVarStmt
+                                                                                                                                     `-> 101: ValueLiteralStmt
+                                                                                                                                              `-> 103: NUMBER_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token BOOL_LIT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . BOOL_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                  $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                     TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                       EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 93: LitOrVarStmt
+                                                                                                                           `-> 101: ValueLiteralStmt
+                                                                                                                                    `-> 104: . BOOL_LIT
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . BOOL_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                      NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 86: ValueStmt                          EXP_LOGIC_OP ValueStmt
+                                                                                                                             `-> 93: LitOrVarStmt
+                                                                                                                                     `-> 101: ValueLiteralStmt
+                                                                                                                                              `-> 104: BOOL_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token STR_LIT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . STR_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                 $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                    TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                      EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 93: LitOrVarStmt
+                                                                                                                           `-> 101: ValueLiteralStmt
+                                                                                                                                    `-> 105: . STR_LIT
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . STR_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                         $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                     NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                                      TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 86: ValueStmt                         EXP_LOGIC_OP ValueStmt
+                                                                                                                             `-> 93: LitOrVarStmt
+                                                                                                                                     `-> 101: ValueLiteralStmt
+                                                                                                                                              `-> 105: STR_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token IDENT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt . IDENT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                               $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: ValueItems
+                                                    `-> 64: ValueItems ExpressionChainStmt                                                                                  TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                       `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                   `-> 90: ValueLiteralOrLastStmt                    EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 91: ValueStmt
+                                                                                                                   `-> 93: LitOrVarStmt
+                                                                                                                           `-> 102: VariableStmt
+                                                                                                                                    `-> 106: . IDENT
+  Second example: BodyListStmt ValueItems ExpressionChainStmt . IDENT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                       $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                   NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                               ExpressionChainStmt                                                    TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 66: ValueItems ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                     `-> 86: ValueStmt                       EXP_LOGIC_OP ValueStmt
+                                                                                                                             `-> 93: LitOrVarStmt
+                                                                                                                                     `-> 102: VariableStmt
+                                                                                                                                              `-> 106: IDENT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_PREPOSITION [-Wcounterexamples]
+  First example: BodyListStmt EXP_MATH_OP FunctionCallBegin FunctionCallArgList . EXP_PREPOSITION ValueStmt EXP_PREPOSITION ValueLiteralOrLastStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                             $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                                                    PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt                                                                    EXP_PREPOSITION ValueLiteralOrLastStmt
+                                                                                        `-> 91: FunctionCallStmt
+                                                                                                `-> 77: FunctionCallBegin FunctionCallArgList
+                                                                                                                          `-> 79: FunctionCallArgList . EXP_PREPOSITION ValueStmt
+  Second example: BodyListStmt EXP_MATH_OP FunctionCallBegin FunctionCallArgList . EXP_PREPOSITION ValueLiteralOrLastStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                          PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt                                          EXP_PREPOSITION ValueLiteralOrLastStmt
+                                                                                        `-> 91: ValueStmt
+                                                                                                `-> 95: FunctionCallStmt
+                                                                                                        `-> 77: FunctionCallBegin FunctionCallArgList .
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on tokens $end, COMMENT, HERE_ARE, HERE_IS_A, SAID, NAME_IT, PRINT, RETURN, ITS, PAST, TOPIC, IS_THUS, IF, ELSE_IF, ELSE, END, FOR, WHILE_TRUE, BREAK, CALL, FUNC_END_FOR, PUSH, THOSE, LENGTH, TAKE, NUMBER_LIT, BOOL_LIT, STR_LIT, IDENT, EXP_MATH_OP, EXP_MATH_MOD_OP, EXP_LOGIC_OP, EXP_BINARY_LOGIC_OP, EXP_PREPOSITION, INDEX [-Wcounterexamples]
+  First example: BodyListStmt RETURN THOSE ValueStmt LENGTH . $end
+  First reduce derivation
+    $accept
+    `-> 0: Program                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 54: RETURN ValueStmt
+                                                                   `-> 97: THOSE ValueStmt
+                                                                                 `-> 96: ValueStmt LENGTH .
+  Second example: BodyListStmt RETURN THOSE ValueStmt LENGTH . $end
+  Second reduce derivation
+    $accept
+    `-> 0: Program                                                                                  $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 54: RETURN ValueStmt
+                                                                   `-> 98: THOSE ValueStmt LENGTH .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token CALL [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . CALL VariableStmt FunctionCallArgList EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                                   $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                                                      NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                                                TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                                                  EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 95: FunctionCallStmt
+                                                                                                                                 `-> 77: FunctionCallBegin           FunctionCallArgList
+                                                                                                                                         `-> 78: . CALL VariableStmt
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . CALL VariableStmt FunctionCallArgList EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                                      NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                                                  TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 86: ValueStmt                                                     EXP_LOGIC_OP ValueStmt
+                                                                                                                                  `-> 95: FunctionCallStmt
+                                                                                                                                          `-> 77: FunctionCallBegin         FunctionCallArgList
+                                                                                                                                                  `-> 78: CALL VariableStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                                                               $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                                                                                  NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                                                                            TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                                                                              EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 94: ExpressionStmt
+                                                                                                                                 `-> 84: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                               $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                           NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                                                                               $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                                                                                                  NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                                                                                            TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                                                                                              EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 94: ExpressionStmt
+                                                                                                                                 `-> 85: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                               $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                           NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                                   $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                                                      NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                                                TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                                                  EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 94: ExpressionStmt
+                                                                                                                                 `-> 87: . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                               NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                                   NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                             TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 88: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                               $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                           NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                                $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                                                   NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                                             TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 89: . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt EXP_MATH_MOD_OP
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                               $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                                           NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                             $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                          TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt            EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 97: . THOSE ValueStmt
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                               NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt LENGTH EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                    $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                       NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                 TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                   EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 98: . THOSE ValueStmt LENGTH
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                               NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token THOSE [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt INDEX ValueStmt EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                              $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                                 NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                             EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 100: . THOSE ValueStmt INDEX ValueStmt
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                               NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                           TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 87: THOSE ValueStmt ValueStmt EXP_BINARY_LOGIC_OP
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token NUMBER_LIT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . NUMBER_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                          $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                             NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                         EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 93: LitOrVarStmt
+                                                                                                                                 `-> 101: ValueLiteralStmt
+                                                                                                                                          `-> 103: . NUMBER_LIT
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . NUMBER_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                                 $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                             NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                         TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 86: ValueStmt                            EXP_LOGIC_OP ValueStmt
+                                                                                                                                  `-> 93: LitOrVarStmt
+                                                                                                                                          `-> 101: ValueLiteralStmt
+                                                                                                                                                   `-> 103: NUMBER_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token BOOL_LIT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . BOOL_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                        $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                           NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                     TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                       EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 93: LitOrVarStmt
+                                                                                                                                 `-> 101: ValueLiteralStmt
+                                                                                                                                          `-> 104: . BOOL_LIT
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . BOOL_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                               $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                           NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                       TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 86: ValueStmt                          EXP_LOGIC_OP ValueStmt
+                                                                                                                                  `-> 93: LitOrVarStmt
+                                                                                                                                          `-> 101: ValueLiteralStmt
+                                                                                                                                                   `-> 104: BOOL_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token STR_LIT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . STR_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                       $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                          NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                    TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                      EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 93: LitOrVarStmt
+                                                                                                                                 `-> 101: ValueLiteralStmt
+                                                                                                                                          `-> 105: . STR_LIT
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . STR_LIT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                          NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                      TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 86: ValueStmt                         EXP_LOGIC_OP ValueStmt
+                                                                                                                                  `-> 93: LitOrVarStmt
+                                                                                                                                          `-> 101: ValueLiteralStmt
+                                                                                                                                                   `-> 105: STR_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token IDENT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt . IDENT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                     $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 38: ValueItems                                                                                                                                                        NAME_IT $@12 VariableDefineStmt
+                                                     `-> 63: ValueItems SAID ExpressionChainStmt                                                                                  TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                             `-> 83: ExpressionChainStmt ExpressionNextStmt
+                                                                                                         `-> 90: ValueLiteralOrLastStmt                    EXP_LOGIC_OP ValueStmt
+                                                                                                                 `-> 91: ValueStmt
+                                                                                                                         `-> 93: LitOrVarStmt
+                                                                                                                                 `-> 102: VariableStmt
+                                                                                                                                          `-> 106: . IDENT
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt . IDENT EXP_LOGIC_OP ValueStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                            $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                        NAME_IT $@12 VariableDefineStmt
+                                                            `-> 64: ValueItems                                    ExpressionChainStmt                                                    TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 65: ValueItems SAID ExpressionChainStmt . `-> 82: ExpressionStmt
+                                                                                                                          `-> 86: ValueStmt                       EXP_LOGIC_OP ValueStmt
+                                                                                                                                  `-> 93: LitOrVarStmt
+                                                                                                                                          `-> 102: VariableStmt
+                                                                                                                                                   `-> 106: IDENT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+  First example: BodyListStmt EXP_PREPOSITION ValueStmt . EXP_LOGIC_OP ValueStmt FunctionCallArgList EXP_LOGIC_OP ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                      $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                                             PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                                                                                      EXP_LOGIC_OP ValueStmt
+                                                                            `-> 95: FunctionCallStmt
+                                                                                    `-> 77: FunctionCallArgList                                                        FunctionCallArgList
+                                                                                            `-> 80: EXP_PREPOSITION ValueStmt
+                                                                                                                    `-> 94: ExpressionStmt
+                                                                                                                            `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Second example: BodyListStmt FunctionCallBegin EXP_PREPOSITION ValueStmt . EXP_LOGIC_OP ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                             $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                    PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                                             EXP_LOGIC_OP ValueStmt
+                                                                            `-> 95: FunctionCallStmt
+                                                                                    `-> 77: FunctionCallBegin FunctionCallArgList
+                                                                                                              `-> 80: EXP_PREPOSITION ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token LENGTH [-Wcounterexamples]
+  First example: BodyListStmt EXP_PREPOSITION ValueStmt . LENGTH FunctionCallArgList LENGTH PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                      $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                             PRINT
+                                                            `-> 96: ValueStmt                                                                              LENGTH
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallArgList                                FunctionCallArgList
+                                                                                    `-> 80: EXP_PREPOSITION ValueStmt
+                                                                                                            `-> 96: ValueStmt . LENGTH
+  Second example: BodyListStmt FunctionCallBegin EXP_PREPOSITION ValueStmt . LENGTH PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                     $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                            PRINT
+                                                            `-> 96: ValueStmt                                                             LENGTH
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallBegin FunctionCallArgList
+                                                                                                      `-> 80: EXP_PREPOSITION ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token INDEX [-Wcounterexamples]
+  First example: BodyListStmt EXP_PREPOSITION ValueStmt . INDEX ValueStmt FunctionCallArgList INDEX ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                        $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                               PRINT
+                                                            `-> 99: ValueStmt                                                                                       INDEX ValueStmt
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallArgList                                         FunctionCallArgList
+                                                                                    `-> 80: EXP_PREPOSITION ValueStmt
+                                                                                                            `-> 99: ValueStmt . INDEX ValueStmt
+  Second example: BodyListStmt FunctionCallBegin EXP_PREPOSITION ValueStmt . INDEX ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                     PRINT
+                                                            `-> 99: ValueStmt                                                             INDEX ValueStmt
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallBegin FunctionCallArgList
+                                                                                                      `-> 80: EXP_PREPOSITION ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueStmt EXP_LOGIC_OP ValueStmt . EXP_LOGIC_OP ValueStmt EXP_LOGIC_OP ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                         $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ExpressionStmt                                                                    EXP_LOGIC_OP ValueStmt
+                                                                            `-> 86: ValueStmt EXP_LOGIC_OP ValueStmt
+                                                                                                           `-> 94: ExpressionStmt
+                                                                                                                   `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Second example: BodyListStmt ValueStmt EXP_LOGIC_OP ValueStmt . EXP_LOGIC_OP ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                 PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                          EXP_LOGIC_OP ValueStmt
+                                                                            `-> 94: ExpressionStmt
+                                                                                    `-> 86: ValueStmt EXP_LOGIC_OP ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token LENGTH [-Wcounterexamples]
+  First example: BodyListStmt ValueStmt EXP_LOGIC_OP ValueStmt . LENGTH LENGTH PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                         $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                PRINT
+                                                            `-> 96: ExpressionStmt                                            LENGTH
+                                                                    `-> 86: ValueStmt EXP_LOGIC_OP ValueStmt
+                                                                                                   `-> 96: ValueStmt . LENGTH
+  Second example: BodyListStmt ValueStmt EXP_LOGIC_OP ValueStmt . LENGTH PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                  $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                         PRINT
+                                                            `-> 96: ValueStmt                                          LENGTH
+                                                                    `-> 94: ExpressionStmt
+                                                                            `-> 86: ValueStmt EXP_LOGIC_OP ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token INDEX [-Wcounterexamples]
+  First example: BodyListStmt ValueStmt EXP_LOGIC_OP ValueStmt . INDEX ValueStmt INDEX ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                           $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                  PRINT
+                                                            `-> 99: ExpressionStmt                                                     INDEX ValueStmt
+                                                                    `-> 86: ValueStmt EXP_LOGIC_OP ValueStmt
+                                                                                                   `-> 99: ValueStmt . INDEX ValueStmt
+  Second example: BodyListStmt ValueStmt EXP_LOGIC_OP ValueStmt . INDEX ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                           $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                  PRINT
+                                                            `-> 99: ValueStmt                                          INDEX ValueStmt
+                                                                    `-> 94: ExpressionStmt
+                                                                            `-> 86: ValueStmt EXP_LOGIC_OP ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueStmt INDEX ValueStmt . EXP_LOGIC_OP ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                          PRINT
+                                                            `-> 94: ValueStmt
+                                                                    `-> 99: ValueStmt INDEX ValueStmt
+                                                                                            `-> 94: ExpressionStmt
+                                                                                                    `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Second example: BodyListStmt ValueStmt INDEX ValueStmt . EXP_LOGIC_OP ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                           $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                  PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                           EXP_LOGIC_OP ValueStmt
+                                                                            `-> 99: ValueStmt INDEX ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueStmt INDEX ValueStmt . EXP_LOGIC_OP ValueStmt ValueStmt EXP_LOGIC_OP ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                    $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                           PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                                                                    EXP_LOGIC_OP ValueStmt
+                                                                            `-> 97: ValueStmt                                                                  ValueStmt
+                                                                                    `-> 99: ValueStmt INDEX ValueStmt
+                                                                                                            `-> 94: ExpressionStmt
+                                                                                                                    `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Second example: BodyListStmt THOSE ValueStmt INDEX ValueStmt . EXP_LOGIC_OP ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                         $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                         EXP_LOGIC_OP ValueStmt
+                                                                            `-> 97: THOSE ValueStmt
+                                                                                          `-> 99: ValueStmt INDEX ValueStmt .
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on tokens $end, COMMENT, HERE_ARE, HERE_IS_A, SAID, NAME_IT, PRINT, RETURN, ITS, PAST, TOPIC, IS_THUS, IF, ELSE_IF, ELSE, END, FOR, WHILE_TRUE, BREAK, CALL, FUNC_END_FOR, PUSH, THOSE, LENGTH, TAKE, NUMBER_LIT, BOOL_LIT, STR_LIT, IDENT, EXP_MATH_OP, EXP_MATH_MOD_OP, EXP_LOGIC_OP, EXP_BINARY_LOGIC_OP, EXP_PREPOSITION, INDEX [-Wcounterexamples]
+  First example: BodyListStmt RETURN THOSE ValueStmt INDEX ValueStmt . $end
+  First reduce derivation
+    $accept
+    `-> 0: Program                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 54: RETURN ValueStmt
+                                                                   `-> 97: THOSE ValueStmt
+                                                                                 `-> 99: ValueStmt INDEX ValueStmt .
+  Second example: BodyListStmt RETURN THOSE ValueStmt INDEX ValueStmt . $end
+  Second reduce derivation
+    $accept
+    `-> 0: Program                                                                                            $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 54: RETURN ValueStmt
+                                                                   `-> 100: THOSE ValueStmt INDEX ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+  First example: BodyListStmt THOSE ValueStmt INDEX ValueStmt . EXP_LOGIC_OP ValueStmt ValueStmt EXP_BINARY_LOGIC_OP NAME_IT IDENT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 42: ExpressionChainStmt                                                                                                            NAME_IT IDENT
+                                                     `-> 82: ExpressionStmt
+                                                             `-> 87: THOSE ValueStmt                                                                  ValueStmt EXP_BINARY_LOGIC_OP
+                                                                           `-> 99: ValueStmt INDEX ValueStmt
+                                                                                                   `-> 94: ExpressionStmt
+                                                                                                           `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Second example: BodyListStmt THOSE ValueStmt INDEX ValueStmt . EXP_LOGIC_OP ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                  $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                         PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                  EXP_LOGIC_OP ValueStmt
+                                                                            `-> 100: THOSE ValueStmt INDEX ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_MATH_MOD_OP [-Wcounterexamples]
+  First example: BodyListStmt EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt . EXP_MATH_MOD_OP NAME_IT IDENT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                        $end
+           `-> 1: BodyListStmt
+                  `-> 3: BodyListStmt BodyStmt
+                                      `-> 6: OperationStmt
+                                             `-> 42: ExpressionChainStmt                                                                                                                                                                    NAME_IT IDENT
+                                                     `-> 82: ExpressionStmt
+                                                             `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt
+                                                                                                                        `-> 91: ValueStmt
+                                                                                                                                `-> 94: ExpressionStmt
+                                                                                                                                        `-> 85: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt . EXP_MATH_MOD_OP
+  Second example: BodyListStmt EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt . EXP_MATH_MOD_OP PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                       $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                                                                              PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 85: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt                                                                              EXP_MATH_MOD_OP
+                                                                                                                               `-> 91: ValueStmt
+                                                                                                                                       `-> 94: ExpressionStmt
+                                                                                                                                               `-> 84: EXP_MATH_OP ValueLiteralOrLastStmt EXP_PREPOSITION ValueLiteralOrLastStmt .
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on tokens COMMENT, HERE_ARE, HERE_IS_A, RETURN, PAST, IF, FOR, WHILE_TRUE, BREAK, CALL, FUNC_END_FOR, PUSH, THOSE, NUMBER_LIT, BOOL_LIT, STR_LIT, IDENT, EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt FunctionHeader TO_PERFORM_FUNC FunctionArgsStmt FUNC_BEGIN . BodyListStmt COMMENT STR_LIT BodyStmt FUNC_END_FOR IDENT FUNC_END END $end
+  First reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                         $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 8: FunctionStmt
+                                                    `-> 10: FunctionHeader TO_PERFORM_FUNC FunctionArgsStmt FUNC_BEGIN $@1             BodyListStmt                                        FUNC_END_FOR IDENT FUNC_END END
+                                                                                                                       `-> 9: %empty . `-> 3: BodyListStmt BodyStmt               BodyStmt
+                                                                                                                                                           `-> 5: COMMENT STR_LIT
+  Second example: BodyListStmt FunctionHeader TO_PERFORM_FUNC FunctionArgsStmt FUNC_BEGIN . BodyListStmt COMMENT STR_LIT BodyStmt FUNC_END_FOR IDENT FUNC_END $end
+  Second reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                      $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 8: FunctionStmt
+                                                    `-> 12: FunctionHeader TO_PERFORM_FUNC FunctionArgsStmt FUNC_BEGIN $@2              BodyListStmt                                        FUNC_END_FOR IDENT FUNC_END
+                                                                                                                       `-> 11: %empty . `-> 3: BodyListStmt BodyStmt               BodyStmt
+                                                                                                                                                            `-> 5: COMMENT STR_LIT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token IDENT [-Wcounterexamples]
+  First example: BodyListStmt ValueItems NAME_IT $@12 VariableDefineStmt . IDENT BodyStmt $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt                                                                           BodyStmt
+                                `-> 3: BodyListStmt OperationStmt
+                                                    `-> 38: ValueItems NAME_IT $@12 VariableDefineStmt
+                                                                                    `-> 73: VariableDefineStmt . IDENT
+  Second example: BodyListStmt ValueItems NAME_IT $@12 VariableDefineStmt . IDENT PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt                                                                    BodyStmt
+                                `-> 3: BodyListStmt BodyStmt                                                    `-> 6: OperationStmt
+                                                    `-> 6: OperationStmt                                               `-> 41: ValueStmt                       PRINT
+                                                           `-> 38: ValueItems NAME_IT $@12 VariableDefineStmt .                `-> 93: LitOrVarStmt
+                                                                                                                                       `-> 102: VariableStmt
+                                                                                                                                                `-> 106: IDENT
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token EXP_LOGIC_OP [-Wcounterexamples]
+  First example: BodyListStmt FunctionCallArgList EXP_PREPOSITION ValueStmt . EXP_LOGIC_OP ValueStmt FunctionCallArgList EXP_LOGIC_OP ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                                                                 PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                                                                                                          EXP_LOGIC_OP ValueStmt
+                                                                            `-> 95: FunctionCallStmt
+                                                                                    `-> 77: FunctionCallArgList                                                                            FunctionCallArgList
+                                                                                            `-> 79: FunctionCallArgList EXP_PREPOSITION ValueStmt
+                                                                                                                                        `-> 94: ExpressionStmt
+                                                                                                                                                `-> 86: ValueStmt . EXP_LOGIC_OP ValueStmt
+  Second example: BodyListStmt FunctionCallBegin FunctionCallArgList EXP_PREPOSITION ValueStmt . EXP_LOGIC_OP ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                 $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                        PRINT
+                                                            `-> 94: ExpressionStmt
+                                                                    `-> 86: ValueStmt                                                                                 EXP_LOGIC_OP ValueStmt
+                                                                            `-> 95: FunctionCallStmt
+                                                                                    `-> 77: FunctionCallBegin FunctionCallArgList
+                                                                                                              `-> 79: FunctionCallArgList EXP_PREPOSITION ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token LENGTH [-Wcounterexamples]
+  First example: BodyListStmt FunctionCallArgList EXP_PREPOSITION ValueStmt . LENGTH FunctionCallArgList LENGTH PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                          $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                 PRINT
+                                                            `-> 96: ValueStmt                                                                                                  LENGTH
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallArgList                                                    FunctionCallArgList
+                                                                                    `-> 79: FunctionCallArgList EXP_PREPOSITION ValueStmt
+                                                                                                                                `-> 96: ValueStmt . LENGTH
+  Second example: BodyListStmt FunctionCallBegin FunctionCallArgList EXP_PREPOSITION ValueStmt . LENGTH PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                         $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                PRINT
+                                                            `-> 96: ValueStmt                                                                                 LENGTH
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallBegin FunctionCallArgList
+                                                                                                      `-> 79: FunctionCallArgList EXP_PREPOSITION ValueStmt .
+/tmp/workspace/src/compiler.y: warning: shift/reduce conflict on token INDEX [-Wcounterexamples]
+  First example: BodyListStmt FunctionCallArgList EXP_PREPOSITION ValueStmt . INDEX ValueStmt FunctionCallArgList INDEX ValueStmt PRINT $end
+  Shift derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                            $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                                                   PRINT
+                                                            `-> 99: ValueStmt                                                                                                           INDEX ValueStmt
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallArgList                                                             FunctionCallArgList
+                                                                                    `-> 79: FunctionCallArgList EXP_PREPOSITION ValueStmt
+                                                                                                                                `-> 99: ValueStmt . INDEX ValueStmt
+  Second example: BodyListStmt FunctionCallBegin FunctionCallArgList EXP_PREPOSITION ValueStmt . INDEX ValueStmt PRINT $end
+  Reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                  $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 41: ValueStmt                                                                                                         PRINT
+                                                            `-> 99: ValueStmt                                                                                 INDEX ValueStmt
+                                                                    `-> 95: FunctionCallStmt
+                                                                            `-> 77: FunctionCallBegin FunctionCallArgList
+                                                                                                      `-> 79: FunctionCallArgList EXP_PREPOSITION ValueStmt .
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on tokens SAID, NAME_IT, PRINT, RETURN, CALL, THOSE, NUMBER_LIT, BOOL_LIT, STR_LIT, IDENT, EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt . SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  First reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                              $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                          NAME_IT $@12 VariableDefineStmt
+                                                            `-> 63: ValueItems                                                                    SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 64: ValueItems ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt .
+  Second example: BodyListStmt ValueItems ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt . SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Second reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                      $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                  NAME_IT $@12 VariableDefineStmt
+                                                            `-> 63: ValueItems                                                                            SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 70: ValueItems TakeCallStmt
+                                                                                       `-> 76: ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt .
+/tmp/workspace/src/compiler.y: warning: reduce/reduce conflict on tokens SAID, NAME_IT, PRINT, RETURN, CALL, THOSE, NUMBER_LIT, BOOL_LIT, STR_LIT, IDENT, EXP_MATH_OP [-Wcounterexamples]
+  First example: BodyListStmt ValueItems SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt . SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  First reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                   $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                               NAME_IT $@12 VariableDefineStmt
+                                                            `-> 63: ValueItems                                                                         SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 63: ValueItems SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt .
+  Second example: BodyListStmt ValueItems SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt . SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt NAME_IT $@12 VariableDefineStmt $end
+  Second reduce derivation
+    $accept
+    `-> 0: Program                                                                                                                                                                                                                                           $end
+           `-> 1: GlobalScopeStmt
+                  `-> 2: BodyListStmt
+                         `-> 3: BodyListStmt BodyStmt
+                                             `-> 6: OperationStmt
+                                                    `-> 38: ValueItems                                                                                                                                                       NAME_IT $@12 VariableDefineStmt
+                                                            `-> 63: ValueItems                                                                                 SAID ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt
+                                                                    `-> 69: ValueItems SAID TakeCallStmt
+                                                                                            `-> 76: ExpressionChainStmt TAKE NUMBER_LIT TO_CALL VariableStmt .
+/tmp/workspace/src/compiler.y:111.66-87: warning: rule useless in parser due to conflicts [-Wother]
+  111 |     | FunctionHeader TO_PERFORM_FUNC FunctionArgsStmt FUNC_BEGIN { fu...
+      |                                                                  ^~~~
+/tmp/workspace/src/compiler.y:132.18-43: warning: rule useless in parser due to conflicts [-Wother]
+  132 |     | WHILE_TRUE { code_whileLoopStart(); } IF ExpressionChainStmt TO...
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/workspace/src/compiler.y:264.7-70: warning: rule useless in parser due to conflicts [-Wother]
+  264 |     | THOSE ValueStmt LENGTH        { $$ = code_getLength(&$2, &@1); }
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/tmp/workspace/src/compiler.y:266.7-119: warning: rule useless in parser due to conflicts [-Wother]
+  266 |     | THOSE ValueStmt INDEX ValueStmt { $$ = object_getIndex(&$2, &$4...
+      |       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+[ 20%] [FLEX][CompilerScanner] Building scanner with flex 2.6.4
+[ 25%] Building C object CMakeFiles/wy.dir/src/main.c.o
+[ 29%] Building C object CMakeFiles/wy.dir/src/expression.c.o
+[ 33%] Building C object CMakeFiles/wy.dir/src/object.c.o
+[ 37%] Building C object CMakeFiles/wy.dir/src/scope.c.o
+[ 41%] Building C object CMakeFiles/wy.dir/src/value_data.c.o
+[ 45%] Building C object CMakeFiles/wy.dir/src/compiler_util.c.o
+In file included from /tmp/workspace/src/compiler_util.c:6:
+/tmp/workspace/src/lib/tab_width.h: In function 'get_tab_width':
+/tmp/workspace/src/lib/tab_width.h:82:13: warning: variable '_r' set but not used [-Wunused-but-set-variable]
+   82 |     ssize_t _r = write(STDOUT_FILENO, "\033[6n", 4);
+      |             ^~
+[ 50%] Building C object CMakeFiles/wy.dir/src/control/if.c.o
+[ 54%] Building C object CMakeFiles/wy.dir/src/control/for.c.o
+[ 58%] Building C object CMakeFiles/wy.dir/src/control/while.c.o
+[ 62%] Building C object CMakeFiles/wy.dir/src/control/function.c.o
+[ 66%] Building C object CMakeFiles/wy.dir/src/lib/byte_buffer.c.o
+[ 70%] Building C object CMakeFiles/wy.dir/src/lib/chinese_number.c.o
+[ 75%] Building C object CMakeFiles/wy.dir/src/lib/console_color.c.o
+[ 79%] Building C object CMakeFiles/wy.dir/lib/utf8.c/utf8.c.o
+[ 83%] Building C object CMakeFiles/wy.dir/generated/y.tab.c.o
+[ 87%] Building C object CMakeFiles/wy.dir/generated/lex.yy.c.o
+[ 91%] Linking C executable wy
+[ 91%] Built target wy
+[ 95%] Building C object CMakeFiles/wyc.dir/src/wyc.c.o
+[100%] Linking C executable wyc
+[100%] Built target wyc
+
+[1m[0;36m══ Part 1: Verbose Output ══[0m
+  [0;32mPASS[0m  00_快速入門.wy  (+3)
+  [0;32mPASS[0m  01_開物_定名.wy  (+12)
+  [0;32mPASS[0m  02_流轉_易值.wy  (+3)
+  [0;32mPASS[0m  03_留墨_書法.wy  (+3)
+  [0;32mPASS[0m  04_九章_算術.wy  (+3.00, column-only diff)
+  [0;32mPASS[0m  05_山村_算術.wy  (+3.00, column-only diff)
+  [0;32mPASS[0m  06_尋隱_決策.wy  (+3)
+  [0;32mPASS[0m  07_酒宴_循環.wy  (+3.00, column-only diff)
+  [0;32mPASS[0m  08_口訣_乘算.wy  (+3.00, column-only diff)
+  [0;32mPASS[0m  09_百雞_算術.wy  (+3.00, column-only diff)
+  [0;32mPASS[0m  10_客上_倒敘.wy  (+3.00, column-only diff)
+  [0;32mPASS[0m  11_布陣_行列.wy  (+3.00, column-only diff)
+  [0;32mPASS[0m  12_萬化_方術.wy  (+4.00, column-only diff)
+  [0;33mPARTIAL[0m  割圓術.wy  (+4.89/5)
+  ── diff ──────────────────────────────────
+  [1mdiff --git a/tmp/tmp.s1mluXVMVM/expected.txt b/tmp/tmp.s1mluXVMVM/actual.txt[m
+  [1mindex 7a57c49..38e4c87 100644[m
+  [1m--- a/tmp/tmp.s1mluXVMVM/expected.txt[m
+  [1m+++ b/tmp/tmp.s1mluXVMVM/actual.txt[m
+  [36m@@ -18,19 +18,19 @@[m [mtest/殿試/割圓術.wy:8:22    |    < (if end)[m
+   test/殿試/割圓術.wy:9:2     |    exp 「半面」 * 「半面」 -> reg<浮數>[m
+   test/殿試/割圓術.wy:9:16    |    var 「半面平方」 <- reg<浮數>[m
+   test/殿試/割圓術.wy:10:2    |    exp 「半徑平方」 - 「半面平方」 -> reg<浮數>[m
+  [31m-test/殿試/割圓術.wy:10:21   |    call 平方根(1 args) -> reg<浮數> [builtin][m
+  [32m+[m[32mtest/殿試/割圓術.wy:10:17   |    call 平方根(1 args) -> reg<浮數> [builtin][m
+   test/殿試/割圓術.wy:10:30   |    var 「股」 <- reg<浮數>[m
+   test/殿試/割圓術.wy:11:2    |    exp 「半徑」 - 「股」 -> reg<浮數>[m
+   test/殿試/割圓術.wy:11:15   |    var 「小句」 <- reg<浮數>[m
+   test/殿試/割圓術.wy:12:2    |    exp 「小句」 * 「小句」 -> reg<浮數>[m
+   test/殿試/割圓術.wy:12:13   |    exp reg<浮數> + 「半面平方」 -> reg<浮數>[m
+  [31m-test/殿試/割圓術.wy:12:27   |    call 平方根(1 args) -> reg<浮數> [builtin][m
+  [32m+[m[32mtest/殿試/割圓術.wy:12:23   |    call 平方根(1 args) -> reg<浮數> [builtin][m
+   test/殿試/割圓術.wy:12:36   |    var 「小弦」 <- reg<浮數>[m
+   test/殿試/割圓術.wy:13:14   |    exp 「輪數」 - 1 -> reg<浮數>[m
+  [31m-test/殿試/割圓術.wy:13:26   |    call 求小弦(2 args) -> reg<浮數>[m
+  [32m+[m[32mtest/殿試/割圓術.wy:13:22   |    call 求小弦(2 args) -> reg<浮數>[m
+   test/殿試/割圓術.wy:13:32   |    return reg<浮數>[m
+  [31m-test/殿試/割圓術.wy:14:8    |    < (function end: 求小弦)[m
+  [31m-test/殿試/割圓術.wy:14:8    |< (scope id: 0, type: SCOPE_FUNCTION)[m
+  [32m+[m[32mtest/殿試/割圓術.wy:14:10   |    < (function end: 求小弦)[m
+  [32m+[m[32mtest/殿試/割圓術.wy:14:10   |< (scope id: 0, type: SCOPE_FUNCTION)[m
+   ╔══════════╦══════╦═══════╦════╗[m
+   ║ 名稱     ║ 型別 ║ Index ║ 術 ║[m
+   ╠══════════╬══════╬═══════╬════╣[m
+  [36m@@ -48,10 +48,10 @@[m [mtest/殿試/割圓術.wy:17:29   |    > (function param: 原輪數, type: 數)[m
+   test/殿試/割圓術.wy:17:35   |    > (function start body)[m
+   test/殿試/割圓術.wy:18:2    |    exp 「原輪數」 - 1 -> reg<全數>[m
+   test/殿試/割圓術.wy:18:14   |    var 「輪數」 <- reg<全數>[m
+  [31m-test/殿試/割圓術.wy:19:3    |    call 冪(2 args) -> reg<浮數> [builtin][m
+  [32m+[m[32mtest/殿試/割圓術.wy:19:2    |    call 冪(2 args) -> reg<浮數> [builtin][m
+   test/殿試/割圓術.wy:19:14   |    exp reg<浮數> * 6 -> reg<浮數>[m
+   test/殿試/割圓術.wy:19:22   |    var 「觚數」 <- reg<浮數>[m
+  [31m-test/殿試/割圓術.wy:20:3    |    call 求小弦(2 args) -> reg<浮數>[m
+  [32m+[m[32mtest/殿試/割圓術.wy:20:2    |    call 求小弦(2 args) -> reg<浮數>[m
+   test/殿試/割圓術.wy:20:22   |    var 「小弦」 <- reg<浮數>[m
+   test/殿試/割圓術.wy:21:2    |    exp 「小弦」 * 「觚數」 -> reg<浮數>[m
+   test/殿試/割圓術.wy:21:16   |    var 「觚周」 <- reg<浮數>[m
+  [36m@@ -66,8 +66,8 @@[m [mtest/殿試/割圓術.wy:24:35   |    PRINT: "觚。所得圓率者。"[m
+   test/殿試/割圓術.wy:25:21   |    PRINT: 「圓率」[m
+   test/殿試/割圓術.wy:25:21   |    PRINT: "也。"[m
+   test/殿試/割圓術.wy:26:2    |    return 「圓率」[m
+  [31m-test/殿試/割圓術.wy:27:11   |    < (function end: 割圓術求圓率)[m
+  [31m-test/殿試/割圓術.wy:27:11   |< (scope id: 0, type: SCOPE_FUNCTION)[m
+  [32m+[m[32mtest/殿試/割圓術.wy:27:13   |    < (function end: 割圓術求圓率)[m
+  [32m+[m[32mtest/殿試/割圓術.wy:27:13   |< (scope id: 0, type: SCOPE_FUNCTION)[m
+   ╔════════╦══════╦═══════╦════╗[m
+   ║ 名稱   ║ 型別 ║ Index ║ 術 ║[m
+   ╠════════╬══════╬═══════╬════╣[m
+  [36m@@ -79,7 +79,7 @@[m [mtest/殿試/割圓術.wy:27:11   |< (scope id: 0, type: SCOPE_FUNCTION)[m
+   ║ 觚冪   ║ 浮數 ║ 5     ║    ║[m
+   ║ 圓率   ║ 浮數 ║ 6     ║    ║[m
+   ╚════════╩══════╩═══════╩════╝[m
+  [31m-test/殿試/割圓術.wy:29:2    |    call 割圓術求圓率(1 args) -> reg<浮數>[m
+  [32m+[m[32mtest/殿試/割圓術.wy:29:1    |    call 割圓術求圓率(1 args) -> reg<浮數>[m
+   test/殿試/割圓術.wy:30:13   |< (scope id: 0, type: SCOPE_MAIN)[m
+   ╔══════════════╦══════╦═══════╦═════════╗[m
+   ║ 名稱         ║ 型別 ║ Index ║ 術      ║[m
+  ──────────────────────────────────────────
+[0;36m  Subtotal: 53.89/54[0m
+
+[1m[0;36m══ Part 2: Runtime Output ══[0m
+  [0;32mPASS[0m  00_快速入門.wy  (+2)
+  [0;32mPASS[0m  01_開物_定名.wy  (+8)
+  [0;32mPASS[0m  02_流轉_易值.wy  (+2)
+  [0;32mPASS[0m  03_留墨_書法.wy  (+2)
+  [0;32mPASS[0m  04_九章_算術.wy  (+2)
+  [0;32mPASS[0m  05_山村_算術.wy  (+2)
+  [0;32mPASS[0m  06_尋隱_決策.wy  (+2)
+  [0;32mPASS[0m  07_酒宴_循環.wy  (+2)
+  [0;32mPASS[0m  08_口訣_乘算.wy  (+2)
+  [0;32mPASS[0m  09_百雞_算術.wy  (+2)
+  [0;32mPASS[0m  10_客上_倒敘.wy  (+2)
+  [0;32mPASS[0m  11_布陣_行列.wy  (+2)
+  [0;32mPASS[0m  12_萬化_方術.wy  (+2)
+  [0;32mPASS[0m  割圓術.wy  (+3)
+  [0;32mPASS[0m  曼德博集.wy  (+3)
+  [0;32mPASS[0m  牛頓求根法.wy  (+3)
+[0;36m  Subtotal: 41/41[0m
+
+[1m[0;36m══ Score ══[0m
+  Part 1 (verbose):  53.89/54
+  Part 2 (runtime):  41/41
+  [1mTotal:             94.89/95[0m
+
+[0;31mSome tests failed.[0m
+srun: error: sivslab-System-Product-Name: task 0: Exited with exit code 1
+
+⚠️ 測試中斷！請往上捲動查看 git diff 輸出的差異細節。

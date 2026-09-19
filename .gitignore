@@ -1,0 +1,40 @@
+# Build outputs
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+*.o
+*.obj
+*.a
+*.lib
+*.dll
+*.exe
+*.out.exe
+*.pdb
+*.ilk
+
+# Generated lexer/parser files
+lex.yy.c
+y.tab.c
+y.tab.h
+parser.tab.c
+parser.tab.h
+
+# IDE and OS files
+.vscode/
+.idea/
+.vs/
+*.user
+*.suo
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.log.tmp
+
